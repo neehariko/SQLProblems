@@ -34,3 +34,4 @@ JOIN CITY as ci
 on co.CODE = ci.COUNTRYCODE
 
 group by (co.CONTINENT)
+
