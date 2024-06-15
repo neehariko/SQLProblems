@@ -1,0 +1,36 @@
+print("HelloWorld")
+
+ 1. Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
+
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+
+select sum(ci.population) from city ci
+join
+Country co
+on ci.CountryCode = co.Code
+where continent ='Asia' ;
+
+
+2.Given the CITY and COUNTRY tables, query the names of all cities where the CONTINENT is 'Africa'.
+
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+
+select  ci.NAME  from city ci
+join
+Country co
+on ci.CountryCode = co.Code
+where continent ='Africa' 
+
+
+
+3.Given the CITY and COUNTRY tables, query the names of all the continents (COUNTRY.Continent) and their respective average city populations (CITY.Population) rounded down to the nearest integer.
+
+SELECT  co.CONTINENT , floor(avg(ci.POPULATION))
+
+FROM COUNTRY as co
+JOIN CITY as ci
+on co.CODE = ci.COUNTRYCODE
+
+group by (co.CONTINENT)
